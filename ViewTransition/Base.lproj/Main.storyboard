@@ -16,19 +16,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jyt-kM-xrK">
-                                <rect key="frame" x="35" y="109" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jyt-kM-xrK">
+                                <rect key="frame" x="30" y="108" width="41" height="30"/>
                                 <state key="normal" title="PUSH"/>
                                 <connections>
                                     <segue destination="N5d-pw-ahz" kind="show" id="j9U-JE-1Bq"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please, input your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dSP-4O-2UZ">
+                                <rect key="frame" x="20" y="178" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please, input your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="riE-Hz-0Dj">
+                                <rect key="frame" x="20" y="222" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWs-AL-Dbz">
+                                <rect key="frame" x="188" y="108" width="206" height="30"/>
+                                <state key="normal" title="Set data to Singleton Instance"/>
+                                <connections>
+                                    <action selector="touchSetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="haZ-ug-sde"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dSP-4O-2UZ" secondAttribute="trailing" constant="20" id="2Xj-TD-CCQ"/>
+                            <constraint firstItem="riE-Hz-0Dj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="N2Y-cj-dVy"/>
+                            <constraint firstItem="riE-Hz-0Dj" firstAttribute="top" secondItem="dSP-4O-2UZ" secondAttribute="bottom" constant="10" id="SdQ-Un-6LH"/>
+                            <constraint firstItem="Jyt-kM-xrK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Wxc-xY-0lI"/>
+                            <constraint firstItem="Jyt-kM-xrK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Yh3-7c-bIo"/>
+                            <constraint firstItem="dSP-4O-2UZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bVg-5w-7Bu"/>
+                            <constraint firstItem="dSP-4O-2UZ" firstAttribute="top" secondItem="Jyt-kM-xrK" secondAttribute="bottom" constant="40" id="jiW-P0-Pjw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CWs-AL-Dbz" secondAttribute="trailing" constant="20" id="kxt-FG-EQd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="riE-Hz-0Dj" secondAttribute="trailing" constant="20" id="o5h-oy-y84"/>
+                            <constraint firstItem="Jyt-kM-xrK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="pmc-aL-Fbi"/>
+                            <constraint firstItem="CWs-AL-Dbz" firstAttribute="baseline" secondItem="Jyt-kM-xrK" secondAttribute="baseline" id="v2X-C2-A3g"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qio-Nz-XB7"/>
+                    <connections>
+                        <outlet property="ageField" destination="riE-Hz-0Dj" id="K9p-m7-0oG"/>
+                        <outlet property="nameField" destination="dSP-4O-2UZ" id="52A-ha-S70"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,19 +75,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaJ-jg-3KU">
-                                <rect key="frame" x="38" y="108" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5h6-xJ-qzU">
+                                <rect key="frame" x="30" y="108" width="30" height="30"/>
                                 <state key="normal" title="POP"/>
                                 <connections>
-                                    <action selector="popToPrev" destination="N5d-pw-ahz" eventType="touchUpInside" id="dO1-BG-UhM"/>
+                                    <action selector="popToPrev" destination="N5d-pw-ahz" eventType="touchUpInside" id="PKA-a5-9Iv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rc-3T-ndf">
+                                <rect key="frame" x="20" y="178" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rg-nC-kTS">
+                                <rect key="frame" x="20" y="209" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mha-Zy-F3Z"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="5h6-xJ-qzU" firstAttribute="leading" secondItem="mha-Zy-F3Z" secondAttribute="leading" constant="30" id="Hdc-7k-hEy"/>
+                            <constraint firstItem="4Rg-nC-kTS" firstAttribute="leading" secondItem="mha-Zy-F3Z" secondAttribute="leading" constant="20" id="Ibh-k5-Jv8"/>
+                            <constraint firstItem="5h6-xJ-qzU" firstAttribute="top" secondItem="mha-Zy-F3Z" secondAttribute="top" constant="20" id="Tlk-Oa-Owr"/>
+                            <constraint firstItem="8rc-3T-ndf" firstAttribute="leading" secondItem="mha-Zy-F3Z" secondAttribute="leading" constant="20" id="fKj-KY-mB7"/>
+                            <constraint firstItem="8rc-3T-ndf" firstAttribute="top" secondItem="5h6-xJ-qzU" secondAttribute="bottom" constant="40" id="omE-nA-6KC"/>
+                            <constraint firstItem="4Rg-nC-kTS" firstAttribute="top" secondItem="8rc-3T-ndf" secondAttribute="bottom" constant="10" id="xhg-mK-LjC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="S0D-j9-Ch5"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="4Rg-nC-kTS" id="juc-8e-3ro"/>
+                        <outlet property="nameLabel" destination="8rc-3T-ndf" id="RWf-Od-86N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9O-aR-f60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
